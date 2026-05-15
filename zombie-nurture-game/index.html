@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ゾンビを育てよ - ゾンビ育成ゲーム</title>
+  <meta name="description" content="ゾンビを育てて、人間に回復させよう！ゾンビの世話をして5段階で完全な人間へ。iOS向けカジュアル育成ゲーム。">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      background: #0d0d0d;
+      color: #e8e8e8;
+      min-height: 100vh;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1a0a0a 0%, #2d1b1b 50%, #0d1a0d 100%);
+      padding: 60px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(80,200,80,0.08) 0%, transparent 60%);
+    }
+
+    .app-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #2a4a2a, #1a2a1a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 64px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .hero .tagline {
+      font-size: 1.1rem;
+      color: #88cc88;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .badges {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: opacity 0.2s;
+    }
+
+    .download-btn:hover { opacity: 0.85; }
+
+    .download-btn svg { width: 22px; height: 22px; }
+
+    .features {
+      padding: 60px 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 36px;
+      color: #fff;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .feature-card .icon { font-size: 2rem; margin-bottom: 12px; }
+
+    .feature-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .feature-card p {
+      font-size: 0.85rem;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    .stages {
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 60px 20px;
+    }
+
+    .stages h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 36px;
+      color: #fff;
+    }
+
+    .stage-list {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .stage-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+
+    .stage-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(80,200,80,0.15);
+      color: #66cc66;
+      font-weight: 800;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .stage-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .stage-info p {
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    .arrow {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #444;
+      padding: 4px 0;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.8rem;
+      color: #444;
+    }
+
+    .footer a { color: #666; text-decoration: none; }
+    .footer a:hover { color: #aaa; }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="app-icon">🧟</div>
+  <h1>ゾンビを育てよ</h1>
+  <p class="tagline">ゾンビを育てて、人間に回復させよう。<br>世話を続ければ、彼はきっと人間に戻れる。</p>
+  <div class="badges">
+    <span class="badge">無料</span>
+    <span class="badge">iOS 17+</span>
+    <span class="badge">日本語</span>
+    <span class="badge">3D育成ゲーム</span>
+  </div>
+  <a href="https://apps.apple.com/jp/app/id6769079116" class="download-btn">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+    </svg>
+    App Store でダウンロード
+  </a>
+</section>
+
+<section class="features">
+  <h2>ゲームの特徴</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="icon">🍖</div>
+      <h3>ご飯をあげる</h3>
+      <p>お腹が空いたゾンビに食事を与えて回復を助けよう</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">✋</div>
+      <h3>頭を撫でる</h3>
+      <p>機嫌がいいときに撫でてあげると回復が加速する</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🎙️</div>
+      <h3>話しかける</h3>
+      <p>声をかけると反応してくれる。会話で絆を深めよう</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">⏰</div>
+      <h3>放置でも回復</h3>
+      <p>ゲームを閉じていても、時間経過で少しずつ回復する</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🎵</div>
+      <h3>ステージBGM</h3>
+      <p>回復段階に合わせて音楽が変わる。完全回復を目指せ</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📱</div>
+      <h3>3Dキャラクター</h3>
+      <p>ステージごとに見た目が変わる3Dゾンビキャラクター</p>
+    </div>
+  </div>
+</section>
+
+<section class="stages">
+  <h2>5段階の回復ストーリー</h2>
+  <div class="stage-list">
+    <div class="stage-item">
+      <div class="stage-num">1</div>
+      <div class="stage-info">
+        <h4>腐敗ゾンビ</h4>
+        <p>出会いはここから。ボロボロのゾンビを救おう。</p>
+      </div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="stage-item">
+      <div class="stage-num">2</div>
+      <div class="stage-info">
+        <h4>半腐敗</h4>
+        <p>少しずつ肉が戻ってきた。まだまだこれから。</p>
+      </div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="stage-item">
+      <div class="stage-num">3</div>
+      <div class="stage-info">
+        <h4>回復中</h4>
+        <p>灰色の肌に血色が戻り始めた。</p>
+      </div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="stage-item">
+      <div class="stage-num">4</div>
+      <div class="stage-info">
+        <h4>ほぼ人間</h4>
+        <p>もうほとんど人間の姿。あとひと踏ん張り。</p>
+      </div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="stage-item">
+      <div class="stage-num">5</div>
+      <div class="stage-info">
+        <h4>完全回復 🎉</h4>
+        <p>ついに人間に戻った！お疲れさま。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 YOSHITAKE HIROTA &nbsp;|&nbsp;
+    <a href="https://sites.google.com/view/pinepor-privacy">プライバシーポリシー</a> &nbsp;|&nbsp;
+    <a href="https://sites.google.com/view/pinepor-privacy">サポート</a>
+  </p>
+</footer>
+
+</body>
+</html>
