@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>まちがい惑星 / Machigai Planet — プレスキット・Press Kit</title>
+<meta name="description" content="3Dの世界を歩いてさがす、つくって配れるまちがいさがし『まちがい惑星』のプレスキット。スクリーンショット・キービジュアル・紹介文をご自由にお使いいただけます。">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="まちがい惑星 / Machigai Planet">
+<meta property="og:title" content="まちがい惑星 — プレスキット / Machigai Planet Press Kit">
+<meta property="og:description" content="3Dの世界を歩いてさがす、つくって配れるまちがいさがし。スクリーンショット・キービジュアル・紹介文は記事にご自由にお使いいただけます。">
+<meta property="og:url" content="https://pinepor.github.io/machigai-wakusei/press/">
+<meta property="og:image" content="https://pinepor.github.io/machigai-wakusei/press/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+  --bg:#0a0f24; --bg2:#141c3a; --ink:#eef3ff; --dim:#a9b6d6;
+  --gold:#ffd76a; --gold2:#e9a93b; --aqua:#4fc3f7; --emer:#37d0a0;
+  --line:rgba(255,255,255,.14); --card:rgba(255,255,255,.055);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",-apple-system,system-ui,sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.85;
+  -webkit-text-size-adjust:100%;
+}
+body::before{
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(1px 1px at 12% 18%,#fff 50%,transparent 51%),
+    radial-gradient(1px 1px at 78% 12%,#fff 50%,transparent 51%),
+    radial-gradient(1.4px 1.4px at 33% 62%,#cfe6ff 50%,transparent 51%),
+    radial-gradient(1px 1px at 88% 71%,#fff 50%,transparent 51%),
+    radial-gradient(1px 1px at 55% 34%,#fff 50%,transparent 51%),
+    radial-gradient(1.2px 1.2px at 22% 88%,#ffe9b8 50%,transparent 51%),
+    radial-gradient(1px 1px at 66% 92%,#fff 50%,transparent 51%),
+    radial-gradient(900px 520px at 78% -6%,rgba(79,195,247,.16),transparent 62%),
+    radial-gradient(760px 480px at 8% 104%,rgba(55,208,160,.13),transparent 60%),
+    linear-gradient(180deg,#0a0f24 0%,#141c3a 58%,#0a0f24 100%);
+  opacity:.99;
+}
+.wrap{max-width:900px;margin:0 auto;padding:34px 20px 90px}
+
+/* header */
+header{text-align:center;padding:14px 0 6px}
+.icon{width:126px;height:126px;border-radius:28px;display:block;margin:0 auto 18px;
+  box-shadow:0 10px 34px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.12)}
+h1{font-size:2.05rem;letter-spacing:.02em;line-height:1.35;font-weight:800}
+h1 .t1{background:linear-gradient(180deg,#fff3c4,var(--gold) 45%,var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+h1 .t2{background:linear-gradient(180deg,#a8ecff,var(--aqua) 48%,var(--emer));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tagline{color:var(--dim);font-size:.98rem;margin-top:6px}
+.en-title{color:#8f9dbe;font-size:.86rem;letter-spacing:.06em;margin-top:2px}
+.cta{display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:20px}
+.cta a{
+  display:inline-block;padding:11px 22px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.92rem;
+  background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.06));
+  border:1px solid var(--line);color:var(--ink);backdrop-filter:blur(6px)
+}
+.cta a.primary{background:linear-gradient(180deg,#ffe08a,#e9a93b);color:#3a2a06;border-color:#ffe6a6}
+
+/* sections */
+h2{
+  font-size:1.18rem;font-weight:800;margin:52px 0 14px;padding-bottom:9px;
+  border-bottom:1px solid var(--line);letter-spacing:.02em;
+}
+h2 span.en{color:#7f8db0;font-weight:500;font-size:.82rem;margin-left:.5em;letter-spacing:.05em}
+h3{font-size:.95rem;margin:22px 0 8px;color:var(--gold);letter-spacing:.03em}
+p,li{font-size:.95rem}
+ul{margin-left:1.25em}
+li{margin:6px 0}
+a{color:var(--aqua)}
+.lead{color:var(--dim)}
+
+table{border-collapse:collapse;width:100%;margin:10px 0;background:var(--card);border-radius:12px;overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:10px 13px;text-align:left;font-size:.92rem;vertical-align:top}
+th{background:rgba(255,255,255,.06);width:10.5em;color:#dfe7ff;font-weight:700;white-space:nowrap}
+tr:last-child th,tr:last-child td{border-bottom:none}
+
+pre{
+  background:rgba(0,0,0,.34);border:1px solid var(--line);border-radius:12px;padding:15px 16px;
+  white-space:pre-wrap;word-break:break-word;font-family:inherit;font-size:.9rem;color:#e6ecff;margin:8px 0
+}
+
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin:14px 0}
+.shots figure{margin:0}
+.shots img{width:100%;display:block;border-radius:12px;border:1px solid var(--line);box-shadow:0 6px 20px rgba(0,0,0,.42)}
+.shots figcaption{font-size:.79rem;color:var(--dim);margin-top:6px;line-height:1.6}
+.note{font-size:.83rem;color:#8f9dbe}
+
+.pill{display:inline-block;font-size:.76rem;padding:3px 11px;border-radius:999px;border:1px solid var(--line);color:var(--dim);margin-right:6px}
+.divider{height:1px;background:var(--line);margin:44px 0 0}
+footer{margin-top:34px;color:var(--dim);font-size:.9rem}
+footer a{color:var(--aqua)}
+@media (max-width:600px){
+  h1{font-size:1.6rem}
+  .wrap{padding:24px 16px 70px}
+  /* 表は縦積みにして横スクロールを出さない */
+  table{display:block;padding:4px 0}
+  tbody,tr,th,td{display:block;width:auto}
+  tr{border-bottom:1px solid var(--line);padding:4px 0}
+  tr:last-child{border-bottom:none}
+  th{background:transparent;border-bottom:none;color:var(--gold);font-size:.79rem;
+     letter-spacing:.05em;padding:8px 14px 0;white-space:normal}
+  td{border-bottom:none;padding:1px 14px 9px;font-size:.9rem}
+  td a{word-break:break-all}
+  .cta a{padding:10px 18px;font-size:.88rem}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img class="icon" src="thumb/icon1024.jpg" alt="まちがい惑星 アプリアイコン">
+  <h1><span class="t1">まちがい</span><span class="t2">惑星</span></h1>
+  <p class="tagline">つくって配れる、3Dまちがいさがし</p>
+  <p class="en-title">Machigai Planet — Make &amp; share 3D spot-the-difference</p>
+  <div class="cta">
+    <a class="primary" href="https://apps.apple.com/jp/app/id6795407869">App Storeで見る</a>
+    <a href="#shots">スクリーンショット</a>
+    <a href="../support.html">サポート</a>
+    <a href="../privacy.html">プライバシー</a>
+  </div>
+  <p class="note" style="margin-top:16px">このページの画像は記事・レビューにご自由にお使いいただけます（クレジット表記不要）。<br>All assets on this page are free to use in articles and reviews. No credit required.</p>
+</header>
+
+<h2>ファクトシート <span class="en">Factsheet</span></h2>
+<table>
+<tr><th>タイトル</th><td>まちがい惑星（英題: Machigai Planet）</td></tr>
+<tr><th>ジャンル</th><td>3Dまちがいさがし（パズル／ファミリー）</td></tr>
+<tr><th>プラットフォーム</th><td>iPhone（iOS 14.0以降）※横画面</td></tr>
+<tr><th>配信日</th><td>2026年7月31日</td></tr>
+<tr><th>価格</th><td>¥160 買い切り（米国 $0.99）／アプリ内課金なし・広告なし</td></tr>
+<tr><th>対応言語</th><td>日本語・英語（端末の言語設定で自動切替）</td></tr>
+<tr><th>配信地域</th><td>全世界</td></tr>
+<tr><th>容量</th><td>約123MB</td></tr>
+<tr><th>年齢制限</th><td>4+</td></tr>
+<tr><th>開発・発売</th><td>YOSHITAKE HIROTA（個人開発）</td></tr>
+<tr><th>App Store</th><td><a href="https://apps.apple.com/jp/app/id6795407869">https://apps.apple.com/jp/app/id6795407869</a></td></tr>
+<tr><th>サポート</th><td><a href="../support.html">support</a> ／ <a href="../privacy.html">privacy</a></td></tr>
+<tr><th>連絡先</th><td>hanshin1653@gmail.com</td></tr>
+</table>
+
+<h2>ここが新しい <span class="en">What's unique</span></h2>
+<ul>
+<li><strong>「見くらべる」のではなく「歩いてさがす」</strong> … 画面は左右2分割。左が正解のお手本、右がちがいの仕込まれた世界。2つの視点は完全に連動し、歩くと左右が同時に動きます。近づく・見上げる・回り込むという移動そのものが攻略になります。</li>
+<li><strong>ちがいは360度どこにでも</strong> … 空に浮かぶ気球の色、床の小物の位置、キリンの斑点の数まで。平面の絵ではなく空間全体が出題範囲です。</li>
+<li><strong>プレイヤーが出題者になれる</strong> … うごかす／まわす／大きさ／いろ／すりかえ／もよう／ふやす の7つの道具で、自分の部屋にちがいを仕込んで友だちに配れます。</li>
+<li><strong>配り方が3通り</strong> … QRコードをかざしてもらう／その場の相手へ電波で直接送る（インターネット不要）／リンクを送る。</li>
+<li><strong>毎日更新「きょうのまちがい」</strong> … 世界中の端末で同じ問題が出題され、連続記録が残ります。この問題にだけ「動くまちがい」が登場します。</li>
+<li><strong>サーバーもアカウントもない</strong> … データ収集なし、通信環境がなくても遊べます。受け渡しは端末どうしが直接行います。</li>
+</ul>
+
+<h2>紹介文（コピペ用） <span class="en">Boilerplate</span></h2>
+
+<h3>50字</h3>
+<pre>3Dの世界を歩いて、左右2画面を見くらべる新しいまちがいさがし。自分で作った問題を友だちに配れます。</pre>
+
+<h3>100字</h3>
+<pre>左が正解のお手本、右がまちがいの世界。3Dの中を自由に歩き回り、左右を見くらべてちがいをタップします。空も地面も動物の模様も対象で、ちがいは360度どこにでも。自分で問題を作って友だちに配ることもできます。</pre>
+
+<h3>300字</h3>
+<pre>『まちがい惑星』は、3Dの世界を歩いてさがすまちがいさがしです。画面は左右2分割で、左が正解のお手本、右がちがいの仕込まれた世界。2つの視点は連動しており、歩くと左右が同時に動きます。ちがいは平面の絵の中ではなく、空も地面も動物の模様も含めた360度のどこかに隠れています。まほう工房・どうぶつ園・夜の夏祭り・海のそこ・宇宙の5つの舞台を巡る全30ステージに加え、毎日更新される「きょうのまちがい」を収録。さらに7つの道具で自分の部屋にちがいを仕込み、QR・近距離ワイヤレス・リンクの3通りで友だちに配れます。サーバーもアカウントもなく、広告・追加課金もない¥160の買い切りです。</pre>
+
+<h3>English (short)</h3>
+<pre>Machigai Planet is a spot-the-difference game you play by walking. The screen is split in two: the left view is the correct reference, the right one hides the differences — and both views move together as you explore. Differences hide anywhere in 360 degrees: the sky, the ground, even an animal's pattern. It packs 30 stages across 5 worlds, a daily puzzle shared by every player, and a creation mode where you hide your own differences and hand the puzzle to a friend via QR code, nearby wireless (no internet needed), or a link. No servers, no accounts, no data collection, no ads. One-time purchase ($0.99).</pre>
+
+<h2 id="shots">スクリーンショット（日本語） <span class="en">Screenshots (JA)</span></h2>
+<p class="note">サムネイルをクリックすると原寸（2796×1290 PNG）が開きます。</p>
+<div class="shots">
+  <figure><a href="img/ja_01_title.png"><img src="thumb/ja_01_title.jpg" alt="タイトル画面。双子の地球のちがいをさがす"></a><figcaption>① タイトル画面（双子の地球）</figcaption></figure>
+  <figure><a href="img/ja_02_zoo.png"><img src="thumb/ja_02_zoo.jpg" alt="どうぶつ園ステージの左右2画面"></a><figcaption>② どうぶつ園／左＝お手本・右＝まちがい</figcaption></figure>
+  <figure><a href="img/ja_03_matsuri.png"><img src="thumb/ja_03_matsuri.jpg" alt="夜の夏祭りステージ"></a><figcaption>③ 夜の夏祭り</figcaption></figure>
+  <figure><a href="img/ja_04_sora.png"><img src="thumb/ja_04_sora.jpg" alt="宇宙ステージ"></a><figcaption>④ 宇宙（月面基地）</figcaption></figure>
+  <figure><a href="img/ja_05_umi.png"><img src="thumb/ja_05_umi.jpg" alt="海のそこステージ"></a><figcaption>⑤ 海のそこ</figcaption></figure>
+  <figure><a href="img/ja_06_create.png"><img src="thumb/ja_06_create.jpg" alt="部屋を作る画面。7つの道具でちがいを仕込む"></a><figcaption>⑥ 部屋を作る（7つの道具）</figcaption></figure>
+  <figure><a href="img/ja_07_share.png"><img src="thumb/ja_07_share.jpg" alt="できた部屋をQR・近距離ワイヤレス・リンクで配る画面"></a><figcaption>⑦ 配る（QR／近くにわたす／リンク）</figcaption></figure>
+  <figure><a href="img/ja_08_levels.png"><img src="thumb/ja_08_levels.jpg" alt="全30ステージの選択画面"></a><figcaption>⑧ ステージ選択（全30ステージ）</figcaption></figure>
+</div>
+
+<h2>スクリーンショット（英語版） <span class="en">Screenshots (EN)</span></h2>
+<div class="shots">
+  <figure><a href="img/en_01_title.png"><img src="thumb/en_01_title.jpg" alt="Title screen"></a><figcaption>① Title</figcaption></figure>
+  <figure><a href="img/en_02_zoo.png"><img src="thumb/en_02_zoo.jpg" alt="Zoo stage, split view"></a><figcaption>② Zoo (split view)</figcaption></figure>
+  <figure><a href="img/en_03_matsuri.png"><img src="thumb/en_03_matsuri.jpg" alt="Summer night festival stage"></a><figcaption>③ Summer Night Festival</figcaption></figure>
+  <figure><a href="img/en_04_sora.png"><img src="thumb/en_04_sora.jpg" alt="Outer space stage"></a><figcaption>④ Outer Space</figcaption></figure>
+  <figure><a href="img/en_05_umi.png"><img src="thumb/en_05_umi.jpg" alt="Under the sea stage"></a><figcaption>⑤ Under the Sea</figcaption></figure>
+  <figure><a href="img/en_06_create.png"><img src="thumb/en_06_create.jpg" alt="Create mode"></a><figcaption>⑥ Create</figcaption></figure>
+  <figure><a href="img/en_07_share.png"><img src="thumb/en_07_share.jpg" alt="Share screen"></a><figcaption>⑦ Share</figcaption></figure>
+  <figure><a href="img/en_08_levels.png"><img src="thumb/en_08_levels.jpg" alt="Stage select"></a><figcaption>⑧ Stage Select</figcaption></figure>
+</div>
+
+<h2>キービジュアル <span class="en">Key visuals</span></h2>
+<p class="note">3200×1800 PNG。記事の見出し画像などにどうぞ。</p>
+<div class="shots">
+  <figure><a href="img/key_girls.png"><img src="thumb/key_girls.jpg" alt="まほう工房のキャラクター5人"></a><figcaption>まほう工房のキャラクターたち</figcaption></figure>
+  <figure><a href="img/key_animals.png"><img src="thumb/key_animals.jpg" alt="どうぶつ園の動物たち"></a><figcaption>どうぶつ園の動物たち</figcaption></figure>
+  <figure><a href="img/key_space.png"><img src="thumb/key_space.jpg" alt="宇宙ステージの住人たち"></a><figcaption>宇宙の住人たち</figcaption></figure>
+</div>
+
+<h2>アプリアイコン <span class="en">App icon</span></h2>
+<div class="shots" style="grid-template-columns:repeat(auto-fill,minmax(180px,1fr))">
+  <figure><a href="img/icon1024.png"><img src="thumb/icon1024.jpg" alt="まちがい惑星 アイコン" style="max-width:180px"></a><figcaption>1024×1024 PNG</figcaption></figure>
+</div>
+
+<h2>素材の利用について <span class="en">Asset usage</span></h2>
+<p><span class="pill">記事利用可</span><span class="pill">クレジット不要</span><span class="pill">改変（トリミング等）可</span></p>
+<p class="lead">このページの画像は、記事・レビュー・紹介動画にご自由にお使いいただけます。動画素材や特定の場面の撮り下ろし、追加のスクリーンショットが必要な場合は、お気軽にご連絡ください。レビュー用のプロモコードもご用意できます。</p>
+<p class="note">Additional screenshots, video footage, or promo codes are available on request — just email us.</p>
+
+<div class="divider"></div>
+<footer>
+  <p><strong>YOSHITAKE HIROTA</strong>（個人開発）<br>
+  Email: <a href="mailto:hanshin1653@gmail.com">hanshin1653@gmail.com</a><br>
+  App Store: <a href="https://apps.apple.com/jp/app/id6795407869">まちがい惑星</a></p>
+  <p class="note" style="margin-top:12px">© 2026 YOSHITAKE HIROTA</p>
+</footer>
+
+</div>
+</body>
+</html>
