@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ぎゅうぎゅう駅員</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#1b1f26">
+<link rel="icon" href="data:,">
+<style>:root{--bg:#1b1f26;--fg:#f2f0e8;--dim:#9aa0ab;--accent:#ffc83d;--danger:#ff5a4f;--panel:#262b34;--display:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;--body:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;--lightningcss-light: ;--lightningcss-dark:initial;color-scheme:dark}html,body{background:var(--bg);height:100%;color:var(--fg);font-family:var(--body);overscroll-behavior:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;margin:0;overflow:hidden}#stage{touch-action:none;position:fixed;top:0;bottom:0;left:0;right:0}canvas{touch-action:none;width:100%;height:100%;display:block}.hud{padding-top:calc(env(safe-area-inset-top,0px) + 10px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));pointer-events:none;font-family:var(--display);flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:6px 8px;display:flex;position:fixed;top:0;left:0;right:0}.hud[hidden]{display:none}.stat{background:#00000073;border-radius:4px;flex:1 1 0;min-width:0;padding:6px 8px;line-height:1.2}.stat small{color:var(--dim);letter-spacing:.08em;white-space:nowrap;font-size:11px;display:block}.stat b{font-variant-numeric:tabular-nums;white-space:nowrap;font-size:22px;font-weight:400}.stat.low b,.stat.low small{color:var(--danger)}.stat.over b,.stat.over small{color:var(--accent)}.station{text-align:center;color:var(--fg);text-shadow:0 1px 2px #0009;flex-basis:100%;font-size:14px}.hint{left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 14px);box-sizing:border-box;text-align:center;width:-moz-fit-content;width:fit-content;font-family:var(--display);color:var(--fg);pointer-events:none;background:#00000073;border-radius:4px;margin:0 auto;padding:6px 12px;font-size:14px;line-height:1.3;position:fixed}.hint[hidden]{display:none}#stick{pointer-events:none;position:fixed;top:0;bottom:0;left:0;right:0}#stick[hidden]{display:none}#stick .base,#stick .knob{box-sizing:border-box;border-radius:50%;position:absolute;top:0;left:0}#stick .base{background:#ffffff24;border:2px solid #ffffff59;width:120px;height:120px}#stick .knob{background:#ffffff73;width:56px;height:56px}#speedlines{pointer-events:none;opacity:0;transition:opacity .2s;position:fixed;top:0;bottom:0;left:0;right:0;-webkit-mask:radial-gradient(circle,#0000 38%,#000 70%);mask:radial-gradient(circle,#0000 38%,#000 70%)}#speedlines svg{width:100%;height:100%;animation:.12s steps(2,end) infinite speedflick}@keyframes speedflick{0%{transform:scale(1)}to{transform:scale(1.03)}}.horn{right:max(16px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 64px);touch-action:manipulation;background:#ffd34aeb;border-radius:50%;width:112px;height:112px;margin:0;padding:0;font-size:22px;line-height:1.1;position:fixed;box-shadow:0 4px #b8902a,0 6px 18px #0006}.horn b{font-size:30px;font-weight:700;display:block}.horn[hidden]{display:none}.horn:disabled{box-shadow:none;color:#333;background:#78787899}.horn.on{color:#c0392b;background:#fff;transform:scale(1.08)}.push{background:#60aaffeb;width:96px;height:96px;font-size:24px;box-shadow:0 4px #2a63b8,0 6px 18px #0006}.push.on{color:#1f5fb0;background:#fff;transform:scale(1.08)}#hitText{text-align:center;pointer-events:none;font-family:var(--display);color:#fff;text-shadow:0 2px #c0392b,0 0 18px #000000b3;letter-spacing:.04em;font-size:30px;font-weight:700;position:fixed;top:34%;left:0;right:0}#hitText.big{color:var(--accent);font-size:40px}#hitText[hidden]{display:none}#hitText.pop{animation:.9s ease-out forwards hitpop}@keyframes hitpop{0%{opacity:0;transform:scale(.4)}15%{opacity:1;transform:scale(1.25)}30%{transform:scale(1)}80%{opacity:1}to{opacity:0;transform:translateY(-30px)}}@media (prefers-reduced-motion:reduce){#speedlines svg,#hitText.pop{animation:none}}#charge{pointer-events:none;position:fixed;top:0;bottom:0;left:0;right:0}#charge[hidden]{display:none}#charge .ring,#charge .aim{box-sizing:border-box;border-radius:50%;position:absolute;top:0;left:0}#charge .ring{--p:0%;background:conic-gradient(var(--accent) var(--p),#ffffff2e 0);width:96px;height:96px;-webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 11px),#000 calc(100% - 10px));mask:radial-gradient(farthest-side,#0000 calc(100% - 11px),#000 calc(100% - 10px))}#charge .aim{background:var(--accent);width:22px;height:22px;box-shadow:0 0 0 3px #00000059}#charge .aim[hidden]{display:none}.sheet{text-align:center;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));background:#1b1f26db;flex-direction:column;justify-content:center;align-items:center;gap:14px;display:flex;position:fixed;top:0;bottom:0;left:0;right:0}.sheet[hidden]{display:none}.sheet.light{background:#1b1f268c}.sheet h1{font-family:var(--display);text-wrap:balance;color:var(--accent);margin:0;font-size:34px;font-weight:700}.sheet h2{font-family:var(--display);color:var(--accent);margin:0;font-size:28px;font-weight:700}.sheet p{color:var(--dim);max-width:30ch;margin:0;line-height:1.6}.sheet .verdict{font-family:var(--display);color:var(--fg);font-size:22px}.row{font-family:var(--display);flex-wrap:wrap;justify-content:center;gap:12px;display:flex}.row div{background:var(--panel);border-radius:4px;min-width:78px;padding:8px 14px}.row small{color:var(--dim);font-size:11px;display:block}.row b{font-variant-numeric:tabular-nums;font-size:24px;font-weight:400}button{font-family:var(--display);background:var(--accent);color:#1b1f26;touch-action:manipulation;border:0;border-radius:6px;margin-top:6px;padding:12px 28px;font-size:20px}button.ghost{color:var(--dim);border:1px solid var(--panel);background:0 0;padding:8px 16px;font-size:15px}button:focus-visible{outline:3px solid var(--fg);outline-offset:2px}</style>
+  <script type="module" crossorigin src="./assets/index-DJeAL-mu.js"></script>
+</head>
+<body>
+<div id="stage"></div>
+
+<div class="hud" id="hud" hidden>
+  <div class="stat" id="stat1"><small>のこり</small><b>30</b></div>
+  <div class="stat" id="stat2"><small>乗車</small><b>0</b></div>
+  <div class="stat" id="stat3"><small>混雑率</small><b>0%</b></div>
+  <div class="station" id="stationName"></div>
+</div>
+<div class="hint" id="hint" hidden>左: 歩く（3 人まで積める）　右: タップで近いドアへ投げる・長押しで山なり　青ボタン: 押し込む</div>
+<div id="speedlines" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><g stroke="#fff" stroke-width=".35" stroke-linecap="round">
+  <line x1="50" y1="50" x2="0" y2="10"/><line x1="50" y1="50" x2="0" y2="50"/><line x1="50" y1="50" x2="0" y2="90"/><line x1="50" y1="50" x2="12" y2="0"/><line x1="50" y1="50" x2="88" y2="0"/>
+  <line x1="50" y1="50" x2="100" y2="10"/><line x1="50" y1="50" x2="100" y2="50"/><line x1="50" y1="50" x2="100" y2="90"/><line x1="50" y1="50" x2="12" y2="100"/><line x1="50" y1="50" x2="88" y2="100"/>
+  <line x1="50" y1="50" x2="30" y2="0"/><line x1="50" y1="50" x2="70" y2="0"/><line x1="50" y1="50" x2="30" y2="100"/><line x1="50" y1="50" x2="70" y2="100"/>
+</g></svg></div>
+<div id="hitText" hidden></div>
+<button id="horn" class="horn" hidden>汽笛</button>
+<button id="push" class="horn push" hidden>押す</button>
+<div id="stick" hidden aria-hidden="true"><div class="base"></div><div class="knob"></div></div>
+<div id="charge" hidden aria-hidden="true"><div class="ring"></div><div class="aim" hidden></div></div>
+
+<div class="sheet" id="title">
+  <h1>ぎゅうぎゅう駅員</h1>
+  <p>3 駅。駅ごとに乗客をできるだけ投げ入れろ。<br>時間切れで 300 km/h 発車。人数しだいで、道中に何が起こるかは物理まかせ。</p>
+  <p>左半分: スティックで歩く　乗客に触れると担ぐ（3 人まで積める）<br>右半分: タップで近いドアへ投げる　長押しで山なりに遠くへ　青ボタンで押し込む<br>ホームに痴漢が出たら近づいてタップでぶん殴る</p>
+  <p id="titleBest">ベストスコア まだなし</p>
+  <button id="btnStart">始発を出す</button>
+  <button id="btnMute" class="ghost" aria-pressed="false">音: オン</button>
+</div>
+
+<div class="sheet light" id="arrival" hidden>
+  <h2 id="arrivalTitle">〇〇駅 到着</h2>
+  <div class="verdict" id="arrivalLeft">残り 0 人</div>
+</div>
+
+<div class="sheet" id="result" hidden>
+  <h1>走行結果</h1>
+  <div class="verdict" id="rLabel"></div>
+  <div class="row">
+    <div><small>投げ入れた</small><b id="rStations">0</b></div>
+    <div><small>終点まで残った</small><b id="rCarried">0</b></div>
+    <div><small>最高速度</small><b id="rRatio">0km/h</b></div>
+    <div><small>吹っ飛ばし</small><b id="rHits">0</b></div>
+    <div><small>最高混雑率</small><b id="rCrowd">0%</b></div>
+    <div><small>痴漢撲滅</small><b id="rPunch">0</b></div>
+  </div>
+  <div class="row">
+    <div><small>スコア</small><b id="rScore">0</b></div>
+    <div><small>ベスト</small><b id="rBest">0</b></div>
+  </div>
+  <button id="btnAgain">もう一度</button>
+</div>
+
+</body>
+</html>
